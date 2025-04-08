@@ -1,14 +1,19 @@
-/* CSS Variablen für konsistentes Farbschema HIER KÖNNEN FARBSCHEMAS UMGESETZT WERDEN*/
+/* =========================
+   🌐 Modernes CSS für Better-Backtesting MVP
+   ========================= */
+
+/* 🎨 Farbvariablen */
 :root {
-  --primary-color: #007bff;
-  --secondary-color: #28a745;
-  --bg-color: #f9f9f9;
-  --text-color: #333;
-  --white: #fff;
-  --shadow-color: rgba(0, 0, 0, 0.1);
+  --primary-color: #2563eb;          /* Modernes, kräftiges Blau */
+  --primary-dark: #1d4ed8;           /* Für Hover-Zustände */
+  --secondary-color: #3b82f6;        /* Leichteres Blau für Akzente */
+  --bg-color: #f7f9fc;               /* Leichtes, helles Grau-Blau */
+  --text-color: #2e2e2e;
+  --white: #ffffff;
+  --shadow-color: rgba(0, 0, 0, 0.06);
 }
 
-/* Globaler Reset */
+/* 🔄 Reset & Basics */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -16,19 +21,20 @@
 }
 body {
   font-family: 'Roboto', sans-serif;
-  line-height: 1.6;
+  font-size: 17px;
+  line-height: 1.75;
   color: var(--text-color);
   background-color: var(--bg-color);
 }
 
-/* Header */
+/* 🔝 Header */
 header {
   background-color: var(--white);
-  padding: 15px 20px;
-  box-shadow: 0 2px 4px var(--shadow-color);
+  padding: 20px;
+  box-shadow: 0 2px 8px var(--shadow-color);
   position: sticky;
   top: 0;
-  z-index: 10;
+  z-index: 100;
 }
 .header-container {
   max-width: 1200px;
@@ -37,22 +43,23 @@ header {
   align-items: center;
 }
 header img.logo {
-  height: 50px;
+  height: 48px;
   margin-right: 15px;
 }
 header h1 {
-  font-size: 1.8em;
+  font-size: 1.8rem;
   color: var(--primary-color);
+  font-weight: 700;
 }
 
-/* Main Container */
+/* 📦 Main Container */
 main {
   max-width: 1200px;
-  margin: 40px auto;
+  margin: 60px auto;
   padding: 0 20px;
 }
 
-/* Screenshot-Sektion */
+/* 📸 Screenshot-Sektion */
 .screenshot-section {
   position: relative;
   overflow: hidden;
@@ -60,8 +67,9 @@ main {
 }
 .screenshot-section img {
   width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
   display: block;
-  object-fit: cover;
 }
 .screenshot-section::after {
   content: "";
@@ -69,192 +77,249 @@ main {
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 150px; /* Fade-out Höhe */
-  background: linear-gradient(to bottom, rgba(249,249,249,0) 0%, var(--bg-color) 100%);
+  height: 150px;
+  background: linear-gradient(to bottom, rgba(247,249,252,0) 0%, var(--bg-color) 100%);
 }
 
-/* Sektionen (Über uns, Mehrwert, Features, Pricing) */
+/* 🧩 Sektionen */
 section {
-  margin-bottom: 60px;
+  margin-bottom: 70px;
   text-align: center;
 }
 section h2 {
-  font-size: 2em;
-  margin-bottom: 20px;
+  font-size: 2.2rem;
+  margin-bottom: 25px;
   color: var(--primary-color);
 }
 section p {
-  font-size: 1.1em;
+  font-size: 1.15rem;
   max-width: 800px;
   margin: 0 auto;
 }
 
-/* Über uns spezifisch */
+/* 💬 Über uns */
 .about-us {
   background-color: var(--white);
-  padding: 40px 20px;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px var(--shadow-color);
+  padding: 50px 25px;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px var(--shadow-color);
 }
 
-/* Features */
+/* 🧠 Features */
 .features ul {
   list-style: none;
-  max-width: 500px;
+  max-width: 600px;
   margin: 0 auto;
   padding: 0;
   text-align: left;
 }
 .features li {
   background-color: var(--white);
-  margin: 10px 0;
-  padding: 15px 20px;
-  border-radius: 4px;
-  box-shadow: 0 2px 4px var(--shadow-color);
+  margin: 12px 0;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px var(--shadow-color);
+  transition: transform 0.2s ease;
+}
+.features li:hover {
+  transform: translateY(-4px);
 }
 
-/* Pricing */
+/* 💸 Pricing */
 .pricing {
   background-color: var(--white);
-  padding: 40px 20px;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px var(--shadow-color);
+  padding: 50px 20px;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px var(--shadow-color);
 }
 .pricing-cards {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 20px;
-  margin-top: 20px;
+  gap: 25px;
+  margin-top: 30px;
 }
 .pricing-card {
-  background-color: #f1f1f1;
-  border-radius: 8px;
-  padding: 30px 20px;
+  background-color: #f0f4fa;
+  border-radius: 16px;
+  padding: 30px 25px;
   width: 280px;
-  box-shadow: 0 2px 4px var(--shadow-color);
+  box-shadow: 0 6px 16px var(--shadow-color);
   transition: transform 0.3s ease;
 }
 .pricing-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-6px);
 }
 .pricing-card h3 {
-  margin-bottom: 10px;
+  margin-bottom: 12px;
   color: var(--primary-color);
 }
 .pricing-card .price {
-  font-size: 1.4em;
-  font-weight: 500;
+  font-size: 1.5rem;
+  font-weight: 600;
   margin-bottom: 15px;
+  color: var(--primary-dark);
 }
 
-/* Call-to-Action */
+/* 🚀 Call-to-Action */
 .cta {
-  margin-bottom: 60px;
+  margin-bottom: 80px;
 }
 .cta button {
-  background-color: var(--secondary-color);
+  background-color: var(--primary-color);
   color: var(--white);
-  padding: 15px 40px;
+  padding: 16px 40px;
   border: none;
-  font-size: 1.2em;
+  font-size: 1.2rem;
   border-radius: 50px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.1);
 }
 .cta button:hover {
-  background-color: #218838;
-  transform: scale(1.03);
+  background-color: var(--primary-dark);
+  transform: scale(1.05);
 }
 
-/* Footer */
+/* 👣 Footer */
 footer {
   text-align: center;
-  padding: 20px;
+  padding: 30px 20px;
   background-color: var(--white);
-  border-top: 1px solid #eaeaea;
-  font-size: 0.9em;
-  color: #777;
-}
-/* Impressum */
-.impressum {
-  max-width: 800px;
-  margin: 60px auto;
-  padding: 0 20px;
-  background: var(--white);
-  border-radius: 8px;
-  box-shadow: 0 2px 4px var(--shadow-color);
-  font-size: 1rem;
-  line-height: 1.5;
-}
-.impressum h1 {
-  margin: 20px 0;
-  color: var(--primary-color);
-  text-align: center;
-}
-.impressum p {
-  margin-top: 20px;
+  border-top: 1px solid #e5e7eb;
+  font-size: 0.95rem;
+  color: #666;
 }
 footer a {
   margin-left: 1rem;
   text-decoration: underline;
+  color: var(--primary-color);
 }
 
-/* Social Proof */
+/* 👤 Social Proof */
 .social-proof {
   text-align: center;
   padding: 40px 20px;
 }
-.social-proof h3 {
-  font-size: 1.8rem;
-  margin-bottom: 20px;
-}
 .social-proof .logos img {
-  width: 120px;
-  height: 120px;
+  width: 100px;
+  height: 100px;
   border-radius: 50%;
   object-fit: cover;
-  opacity: 0.8;
+  opacity: 0.85;
   transition: transform 0.2s ease;
-
-  margin: 0 15px;
+  margin: 0 12px;
 }
-
 .social-proof .logos img:hover {
   transform: scale(1.1);
 }
 
-/* Lead Capture Form */
+/* 📬 Lead Capture */
 .lead-form {
   background-color: var(--white);
-  padding: 40px 20px;
-  box-shadow: 0 2px 4px var(--shadow-color);
-  margin-bottom: 60px;
+  padding: 50px 20px;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px var(--shadow-color);
+  margin-bottom: 80px;
   text-align: center;
 }
 .lead-form input[type="email"] {
-  padding: 12px 16px;
-  width: 300px;
+  padding: 14px 18px;
+  width: 320px;
   max-width: 100%;
   border: 1px solid #ccc;
-  border-radius: 4px;
+  border-radius: 12px;
   margin-right: 10px;
+  font-size: 1rem;
 }
 .lead-form button {
-  padding: 12px 30px;
+  padding: 14px 30px;
   border: none;
   background-color: var(--primary-color);
   color: var(--white);
-  border-radius: 4px;
+  border-radius: 12px;
   cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 .lead-form button:hover {
-  background-color: darken(var(--primary-color), 10%);
+  background-color: var(--primary-dark);
+  transform: scale(1.03);
+}
+.about-us.mission {
+  background-color: var(--white);
+  padding: 60px 30px;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px var(--shadow-color);
+  max-width: 900px;
+  margin: 0 auto 80px auto;
+  text-align: left;
 }
 
-@media (max-width: 600px) {
+.about-us.mission h2 {
+  font-size: 2.2rem;
+  color: var(--primary-color);
+  margin-bottom: 25px;
+  line-height: 1.3;
+}
+
+.about-us.mission p {
+  font-size: 1.15rem;
+  line-height: 1.8;
+  color: var(--text-color);
+}
+
+.about-us.mission strong {
+  color: var(--primary-color);
+  font-weight: 600;
+}
+
+.about-us.mission em {
+  font-style: italic;
+  color: var(--secondary-color);
+}
+
+.datenschutz,
+.impressum {
+  max-width: 800px;
+  margin: 60px auto;
+  padding: 40px 20px;
+  background: var(--white);
+  border-radius: 16px;
+  box-shadow: 0 6px 20px var(--shadow-color);
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--text-color);
+}
+
+.agb {
+  max-width: 800px;
+  margin: 60px auto;
+  padding: 40px 20px;
+  background: var(--white);
+  border-radius: 16px;
+  box-shadow: 0 6px 20px var(--shadow-color);
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--text-color);
+}
+
+
+
+/* 📱 Mobile Responsiveness */
+@media (max-width: 768px) {
+  .pricing-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+  .lead-form input[type="email"] {
+    margin-bottom: 15px;
+    margin-right: 0;
+  }
   .lead-form button {
-    margin-top: 20px; /* Abstand oben */
-    margin-right: 0;  /* Überschreibt das margin-right von Desktop */
+    width: 100%;
   }
 }
+
