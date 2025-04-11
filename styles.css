@@ -326,15 +326,23 @@ footer a {
 /* 📱 Mobile Responsiveness */
 @media (max-width: 768px) {
   .pricing-cards {
+    display: flex;
     flex-direction: column;
     align-items: center;
   }
+
+  .pricing-card {
+    width: 90%;
+    max-width: 400px;
+  }
+
   .lead-form input[type="email"] {
     margin-bottom: 15px;
     margin-right: 0;
+    width: 100%;
   }
+
   .lead-form button {
     width: 100%;
   }
 }
-
