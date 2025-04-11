@@ -146,7 +146,6 @@ section p {
   width: 280px;
   box-shadow: 0 6px 16px var(--shadow-color);
   transition: transform 0.3s ease;
-  flex: 0 1 calc(50% - 2rem); /* 2 Karten pro Reihe */
 }
 .pricing-card:hover {
   transform: translateY(-6px);
@@ -310,21 +309,21 @@ footer a {
 .modern-list {
   list-style: none;
   padding-left: 0;
-  margin: 1.5rem 0;
+}
+
+.modern-list li::before {
+  content: None;
+  margin-right: 0.5em;
+  color: #2e86de;
 }
 
 .modern-list li {
-  margin-bottom: 0.75rem;
-  font-size: 1.05rem;
-  line-height: 1.6;
+  margin-bottom: 0.75em;
+  font-size: 1.05em;
+  line-height: 1.5em;
+  display: flex;
+  align-items: flex-start;
 }
-ul.modern-list {
-  list-style: none !important;
-  padding-left: 0;
-  margin-left: 0;
-}
-
-
 
 
 
@@ -332,23 +331,15 @@ ul.modern-list {
 /* 📱 Mobile Responsiveness */
 @media (max-width: 768px) {
   .pricing-cards {
-    display: flex;
     flex-direction: column;
     align-items: center;
   }
-
-  .pricing-card {
-    width: 90%;
-    max-width: 400px;
-  }
-
   .lead-form input[type="email"] {
     margin-bottom: 15px;
     margin-right: 0;
-    width: 100%;
   }
-
   .lead-form button {
     width: 100%;
   }
 }
+
