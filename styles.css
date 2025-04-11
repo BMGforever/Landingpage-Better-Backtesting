@@ -307,13 +307,14 @@ footer a {
 }
 
 .modern-list {
-  list-style: none;
+  list-style: none !important;
   padding-left: 0;
 }
 
+
 .modern-list li::before {
-  content: None;
-  margin-right: 0.5em;
+  content: "";
+  margin-right: 0;
   color: #2e86de;
 }
 
