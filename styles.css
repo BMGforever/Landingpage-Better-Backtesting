@@ -318,6 +318,12 @@ footer a {
   font-size: 1.05rem;
   line-height: 1.6;
 }
+ul.modern-list {
+  list-style: none !important;
+  padding-left: 0;
+  margin-left: 0;
+}
+
 
 
 
