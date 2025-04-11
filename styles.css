@@ -146,6 +146,7 @@ section p {
   width: 280px;
   box-shadow: 0 6px 16px var(--shadow-color);
   transition: transform 0.3s ease;
+  flex: 0 1 calc(50% - 2rem); /* 2 Karten pro Reihe */
 }
 .pricing-card:hover {
   transform: translateY(-6px);
@@ -305,6 +306,20 @@ footer a {
   line-height: 1.7;
   color: var(--text-color);
 }
+
+.modern-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 1.5rem 0;
+}
+
+.modern-list li {
+  margin-bottom: 0.75rem;
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+
 
 
 
